@@ -31,6 +31,18 @@
     <%= form.text_field :directions, id: :recipe_directions %>
   </div>
 
+  <div class="field">
+    <%= form.label :ingredients %>
+    <%= form.text_field :ingredients, id: :recipe_ingredients %>
+  </div>
+
+
+
+<%= form_tag("/attendances", method: "post") do %>
+  <input type="hidden" name="concert_id" value="<%=@concert.id%>">
+  <input type="submit" value="Attend">
+<%end%>
+
   <div class="actions">
     <%= form.submit %>
   </div>
