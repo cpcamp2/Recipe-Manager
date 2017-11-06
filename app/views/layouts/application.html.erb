@@ -7,12 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
+    <style>
+    p, li, #recipes, td {
+        font-size: 18px;
+    }
+  </style>
   </head>
 
   <body>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
+      <p><%=current_user.email%></p>
         <%= link_to "Home", root_path %>
         <%= link_to "Profile", user_session_path %>
         <%= link_to "All Recipes", recipes_path %>
