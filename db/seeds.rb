@@ -1,7 +1,6 @@
 require 'faker'
 
 Recipe.delete_all
-Category.delete_all
 User.delete_all
 
 # User.create(email: "clr2107@gmail.com", password: "cat")
@@ -25,13 +24,13 @@ User.delete_all
   User.create(email: Faker::Internet.email, password: Faker::Internet.password(6, 15))
 end
 
-c1 = Category.create(name: "Appetizer")
-c2 = Category.create(name: "Salad")
-c3 = Category.create(name: "Main Course")
-c4 = Category.create(name: "Dessert")
-c5 = Category.create(name: "Dinner")
-c6 = Category.create(name: "Lunch")
+# c1 = Category.create(name: "Appetizer")
+# c2 = Category.create(name: "Salad")
+# c3 = Category.create(name: "Main Course")
+# c4 = Category.create(name: "Dessert")
+# c5 = Category.create(name: "Dinner")
+# c6 = Category.create(name: "Lunch")
 
 15.times do
-  Recipe.create(name: Faker::Food.dish, difficulty: "Hard", prep_time: Faker::Number.number(2), directions: Faker::Lorem.words, ingredients: Faker::Food.ingredient, user_id: Faker::Number.between(1, 6), category_id: Faker::Number.between(1, 6))
+  Recipe.create(name: Faker::Food.dish, difficulty: "Hard", prep_time: Faker::Number.number(2), directions: Faker::Lorem.words, ingredients: Faker::Food.ingredient, user_id: Faker::Number.between(1, 6), category: "Appetizer")
 end

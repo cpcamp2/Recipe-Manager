@@ -37,11 +37,10 @@
   </div>
 
 
-
-<%= form_tag("/attendances", method: "post") do %>
-  <input type="hidden" name="concert_id" value="<%=@concert.id%>">
-  <input type="submit" value="Attend">
-<%end%>
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :recipe_category %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
