@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :recipes
   resources :ratings
   root 'welcome#index'
+
 end

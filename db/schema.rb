@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20171106162603) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "ratings", force: :cascade do |t|
     t.integer "score", null: false
     t.integer "recipe_id"
