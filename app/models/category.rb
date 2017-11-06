@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  validates :name
+  validates :name, presence: true
 
   has_many :recipes
 end
