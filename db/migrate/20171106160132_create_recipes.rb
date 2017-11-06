@@ -6,6 +6,8 @@ class CreateRecipes < ActiveRecord::Migration[5.1]
       t.integer :prep_time
       t.string :directions, null: false
       t.string :ingredients, null: false
+      t.references :user, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end
