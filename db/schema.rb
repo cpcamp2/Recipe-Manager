@@ -24,17 +24,28 @@ ActiveRecord::Schema.define(version: 20171106162603) do
   create_table "ratings", force: :cascade do |t|
     t.integer "score"
     t.bigint "recipe_id"
+<<<<<<< HEAD
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_ratings_on_recipe_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
+=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_ratings_on_recipe_id"
+>>>>>>> f028e9d78bbc81b9f40bf52abd8ce382253ccddf
   end
 
   create_table "recipes", force: :cascade do |t|
     t.string "name", null: false
+<<<<<<< HEAD
     t.string "difficulty", null: false
     t.integer "prep_time", null: false
+=======
+    t.string "difficulty"
+    t.integer "prep_time"
+>>>>>>> f028e9d78bbc81b9f40bf52abd8ce382253ccddf
     t.string "directions", null: false
     t.string "ingredients", null: false
     t.datetime "created_at", null: false
