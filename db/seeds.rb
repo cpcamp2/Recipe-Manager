@@ -7,11 +7,3 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.delete_all
-User.create(email: "clr2107@gmail.com", password: "cat")
-
-Category.delete_all
-Category.create(name: "dinner")
-
-Recipe.delete_all
-Recipe.create(name: "butternut squash soup", difficulty: "easy", prep_time: 60, directions: "1. Mash up some butternut squash. 2. Add cream. 3. Heat up in a pot.", ingredients: "squash, cream", user_id: 1, category_id: 1)
