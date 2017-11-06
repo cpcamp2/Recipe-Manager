@@ -12,12 +12,17 @@
 
 <p>
   <strong>Prep time:</strong>
-  <%= @recipe.prep_time %>
+  <%= @recipe.prep_time %> minutes
 </p>
 
 <p>
   <strong>Directions:</strong>
   <%= @recipe.directions %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @recipe.ingredients%>
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

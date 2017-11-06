@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<div id="recipes">
 <h1>Recipes</h1>
-
+<%= link_to 'Add New Recipe', new_recipe_path %>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Difficulty</th>
       <th>Prep time</th>
-      <th>Directions</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,18 +16,14 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.name %></td>
+        <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
         <td><%= recipe.difficulty %></td>
-        <td><%= recipe.prep_time %></td>
-        <td><%= recipe.directions %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= recipe.prep_time %> minutes</td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+</div>
 
-<%= link_to 'New Recipe', new_recipe_path %>

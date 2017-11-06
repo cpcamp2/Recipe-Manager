@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RaggedJellyfishProject</title>
+    <title>Recipe Manager</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <style>
+    p, li, #recipes, td {
+        font-size: 18px;
+    }
+  </style>
   </head>
 
   <body>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>
+      <p><%=current_user.email%></p>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Profile", user_session_path %>
+        <%= link_to "All Recipes", recipes_path %>
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+
       <% end %>
     </p>
     <%= render 'shared/alerts' %>
