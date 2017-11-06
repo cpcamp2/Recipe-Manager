@@ -3,5 +3,10 @@
 <h3>My Recipes</h3>
 
 <%@recipes.each do |recipe| %>
-  <%=recipe.name%>
+  <h3><%=recipe.name%></h3>
+  <ol>
+  <li><%=recipe.ingredients%></li>
+  <li><%=recipe.directions%></li>
+  <li><%=recipe.difficulty%></li>
+</ol>
 <%end%>
