@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RaggedJellyfishProject</title>
+    <title>Recipe Manager</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -17,6 +17,7 @@
       <% else %>
         <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %>
         <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+        <%= link_to "My Recipes", recipes_path %>
       <% end %>
     </p>
     <%= render 'shared/alerts' %>
