@@ -1,4 +1,4 @@
-# class UsersController < ApplicationController
+class UsersController < ApplicationController
 
 
     def index
@@ -16,4 +16,3 @@
       params.require(:user).permit(:email)
     end
   end
-
