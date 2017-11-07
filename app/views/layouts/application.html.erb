@@ -14,9 +14,10 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Home</a>
+        <a href="/" class="brand-logo"><i class="material-icons">home</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
+            <li><%= link_to "New Recipe", new_recipe_path , :class => 'navbar-link'%></li>
             <li><%= link_to "All Recipes", recipes_path , :class => 'navbar-link'%></li>
             <li><%= link_to "My Recipes", user_path(current_user.id), :class => 'navbar-link' %></li>
             <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
