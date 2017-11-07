@@ -14,7 +14,7 @@ class RatingsController < ApplicationController
 
   # GET /ratings/new
   def new
-    @rating = Rating.new
+    @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new
   end
 
   # GET /ratings/1/edit
@@ -24,14 +24,15 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(rating_params)
+    @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new(rating_params)
+    @rating.user = current_user
 
     respond_to do |format|
       if @rating.save
-        format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
+        format.html { redirect_to recipe_path(@rating.recipe), notice: 'Rating was successfully created.' }
         format.json { render :show, status: :created, location: @rating }
       else
-        format.html { render :new }
+        format.html { render :new  }
         format.json { render json: @rating.errors, status: :unprocessable_entity }
       end
     end
