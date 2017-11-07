@@ -13,10 +13,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :score %>
-    <%= form.number_field :score, id: :rating_score %>
-  </div>
+  <p>
+    <div class="field">
+      <%= form.label :score %>
+
+      <%= radio_button_tag("rating[score]", "1") %>
+      <%= label_tag(:rating_score_1, "1")  %>
+
+      <%= radio_button_tag("rating[score]", "2") %>
+      <%= label_tag(:rating_score_2, "2")  %>
+
+      <%= radio_button_tag("rating[score]", "3") %>
+      <%= label_tag(:rating_score_3, "3")  %>
+
+      <%= radio_button_tag("rating[score]", "4") %>
+      <%= label_tag(:rating_score_4, "4")  %>
+
+      <%= radio_button_tag("rating[score]", "5") %>
+      <%= label_tag(:rating_score_5, "5")  %>
+    </div>
+  </p>
 
   <div class="actions">
     <%= form.submit %>
