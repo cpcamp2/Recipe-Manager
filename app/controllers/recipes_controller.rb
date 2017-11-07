@@ -31,6 +31,7 @@
   # POST /recipes
   # POST /recipes.json
   def create
+    binding.pry
     @recipe = current_user.recipes.create(recipe_params)
 
     respond_to do |format|
