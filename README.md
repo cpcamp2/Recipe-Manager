@@ -1,4 +1,7 @@
 # README
+ * Team Name: Ragged Jellyfishes
+ * Chris Camp, Amber Mailliard, Catherine Rice, David Skaggs
+ * User stories: A user can create a profile, log in, create a new recipe, see a list of all recipes, view a profile page with a list of their submitted recipes, and search for recipes by name and ingredient.
 
 # Build a Client Project
 
@@ -8,14 +11,14 @@ A chef wants to open a new restaurant! Her niche is that she wants to crowdsourc
 
 ### MVP:
 A user should be able to log into the app.
-A user should be able to submit a SINGLE recipe to a category 
+A user should be able to submit a SINGLE recipe to a category
 * Appetizer
 * Salad
 * Main Course
 * Dessert
 
-A recipe should consist of a name, Ingredients, difficulty level, prep time, and directions, creator 
-Each Ingredient consists of the item, the amount, and the measurement 
+A recipe should consist of a name, Ingredients, difficulty level, prep time, and directions, creator
+Each Ingredient consists of the item, the amount, and the measurement
 
 ### Nice to have:
 Users can Rate a recipe a single time 1-5 stars
