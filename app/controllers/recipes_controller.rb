@@ -7,6 +7,7 @@
     current_user
     @recipes = Recipe.all
     if params[:search]
+      # binding.pry
       @recipes = Recipe.search(params[:search])
     else
       @recipes = Recipe.all

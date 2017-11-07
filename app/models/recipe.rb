@@ -5,13 +5,15 @@ class Recipe < ApplicationRecord
   has_many :ratings
 
   def self.search(search)
+    @recipes = Recipe.all
     searched_recipes = []
     @recipes.each do |recipe|
       if recipe.ingredients.include?(search)
         searched_recipes << recipe
       end
-      return searched_recipes
+
     end
+    return searched_recipes
   end
 
 end

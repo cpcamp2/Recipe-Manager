@@ -6,8 +6,8 @@
 
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:q, "Search by ingredient:") %>
-    <%= text_field_tag(:q) %>
+    <%= label_tag(:search, "Search by ingredient:") %>
+    <%= text_field_tag(:search) %>
     <%= submit_tag("Search") %>
   <%end%>
 </div>
