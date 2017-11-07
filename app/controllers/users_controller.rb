@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
 
     def index
-      @recipes = current_user.recipes
+      @user = User.find_by(id: current_user.id)
+      @user_recipes = current_user.recipes
     end
 
     def show
-
+      @current_user
+      @user_recipes = current_user.recipes
     end
 
-    def new
-      @user = User.new
-    end
-
-    def create
-      end
   end

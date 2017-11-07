@@ -1,10 +1,17 @@
-class RecipesController < ApplicationController
+ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.json
   def index
+    current_user
     @recipes = Recipe.all
+    if params[:search]
+      # binding.pry
+      @recipes = Recipe.search(params[:search])
+    else
+      @recipes = Recipe.all
+    end
   end
 
   # GET /recipes/1
