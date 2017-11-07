@@ -1,5 +1,6 @@
 require 'faker'
 
+Rating.delete_all
 Recipe.delete_all
 User.delete_all
 
@@ -34,3 +35,6 @@ end
 15.times do
   Recipe.create(name: Faker::Food.dish, difficulty: "Hard", prep_time: Faker::Number.number(2), directions: Faker::Lorem.words, ingredients: Faker::Food.ingredient, user_id: Faker::Number.between(1, 6), category: "Appetizer")
 end
+
+
+

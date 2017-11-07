@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div id="recipes">
-<h3>Recipes</h3>
-<%= link_to 'Add New Recipe', new_recipe_path %>
+<h3>Recipe Box</h3>
+<li><%= link_to 'Add New Recipe', new_recipe_path %></li>
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Difficulty</th>
       <th>Prep time</th>
+      <th>Rating</th>
 
       <th colspan="3"></th>
     </tr>
@@ -19,6 +20,7 @@
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
+
       </tr>
     <% end %>
   </tbody>
