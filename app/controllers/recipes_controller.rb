@@ -6,9 +6,11 @@
   def index
     current_user
     @recipes = Recipe.all
-    if params[:search]
+    if params[:ingredient]
       # binding.pry
-      @recipes = Recipe.search(params[:search])
+      @recipes = Recipe.ingredient_search(params[:ingredient])
+    elsif params[:name]
+      @recipes = Recipe.name_search(params[:name])
     else
       @recipes = Recipe.all
     end

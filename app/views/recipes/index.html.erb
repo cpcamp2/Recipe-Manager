@@ -6,14 +6,25 @@
 
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:search, "Search by ingredient:") %>
-    <%= text_field_tag(:search) %>
+    <%= label_tag(:ingredient, "Search by ingredient:") %>
+    <%= text_field_tag(:ingredient) %>
+    <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
+  <%end%>
+</div>
+<br />
+
+<div id="search-box-name">
+  <%= form_tag('/recipes', method: "get") do %>
+    <%= label_tag(:name, "Search by recipe name:") %>
+    <%= text_field_tag(:name) %>
     <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
 
 <% if @recipes.blank? %>
   <p>There are no recipes with <%= params[:search]%>. </p>
+<%elsif @recipes.blank? %>
+<p>There are no recipes with <%= params[:name]%> </p>
 <%else%>
 
 <table>
@@ -23,7 +34,7 @@
       <th>Submitted By</th>
       <th>Difficulty</th>
       <th>Prep time</th>
-      <th>Rating</th>
+      <th>Average Rating</th>
 
       <th colspan="3"></th>
     </tr>
