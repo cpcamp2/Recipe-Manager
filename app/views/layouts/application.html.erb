@@ -7,27 +7,27 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
     </style>
   </head>
-
   <body>
     <nav>
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
-            <li><%= link_to "All Recipes", recipes_path %></li>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
-            <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
-          <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to "All Recipes", recipes_path %></li>
+          <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %></li>
+          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link' %></li>
+        <% end %>
     </div>
   </nav>
-    <%= render 'shared/alerts' %>
-    <%= yield %>
+  <%= render 'shared/alerts' %>
+  <%= yield %>
   </body>
 </html>
