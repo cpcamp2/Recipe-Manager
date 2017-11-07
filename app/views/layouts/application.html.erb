@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <style>
-    p, li, #recipes, td {
-        font-size: 18px;
-    }
-  </style>
+
+    </style>
+
   </head>
 
   <body>
@@ -21,7 +20,8 @@
         <a href="/" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
-            <li><%= link_to "All Recipes", recipes_path %></li>
+            <li><%= link_to "All Recipes", recipes_path , :class => 'navbar-link'%></li>
+            <li><%= link_to "My Recipes", user_path(current_user.id), :class => 'navbar-link' %></li>
             <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
           <% else %>

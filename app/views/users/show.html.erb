@@ -1,0 +1,7 @@
+<h3>My Recipes</h3>
+<ul>
+<%@user_recipes.each do |recipe|%>
+  <li><%=recipe.name%> <%= link_to 'More info', recipe%></li>
+
+<%end%>
+</ul>
