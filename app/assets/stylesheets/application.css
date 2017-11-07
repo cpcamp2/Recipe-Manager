@@ -16,3 +16,18 @@
 p, li, #recipes, td {
     font-size: 18px;
 }
+
+.recipe-img {
+  width: 40%;
+  height: 50%;
+  border-radius: 30px;
+
+
+}
+
+#image-display  {
+  display: inline-block;
+  column-count: 2;
+
+}
+

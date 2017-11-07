@@ -30,6 +30,10 @@
   <%= @recipe.category%>
 </p>
 
+
+
 <%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %> |
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>
+<br>
+<img class="recipe-img" src= "<%=@recipe.image_url%>">

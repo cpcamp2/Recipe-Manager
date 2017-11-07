@@ -5,7 +5,12 @@
 <br>
 <%@user_recipes.each do |recipe|%>
 <br>
+<div id="display-image"
   <li><%=recipe.name%> <%= link_to 'More info', recipe%></li>
+  <% if recipe.image_url %>
+  <li><img class="recipe-img" src= "<%=recipe.image_url%>"></li>
+  <% end%>
+</div>
 <br>
 <%end%>
 </ul>
