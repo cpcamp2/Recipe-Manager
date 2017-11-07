@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div id="recipes">
 <h3>Menu</h3>
-<li><%= link_to 'Add New Recipe', new_recipe_path %></li>
+<h6><%= link_to 'Add New Recipe', new_recipe_path %><h6>
 <br />
 
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:search, "Search by ingredient:") %>
     <%= text_field_tag(:search) %>
-    <%= submit_tag("Search") %>
+    <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
 
@@ -37,6 +37,15 @@
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
 
+        <% sum = 0 %>
+        <% recipe.ratings.each do |rating| %>
+          <% sum += rating.score %>
+        <% end %>
+        <% if recipe.ratings.empty? %>
+        <td>Unrated</td>
+        <% else %>
+        <td><%= sum / recipe.ratings.length %><td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
