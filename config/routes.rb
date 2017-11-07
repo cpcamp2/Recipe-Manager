@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :ratings
   end
-  resources :users
+  resources :users, only: [:show]
+  match 'users/:id' => 'users#show', via: :get
   root 'welcome#index'
-
 end
