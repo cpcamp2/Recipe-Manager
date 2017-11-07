@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :ratings
 
+  paginates_per 10
+
   def self.ingredient_search(ingredient)
     @recipes = Recipe.all
     searched_recipes = []
