@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :recipe_name %>
+    <%= form.text_field :name, placeholder: "ex: Cake", id: :recipe_name %>
   </div>
 
   <p>
@@ -33,17 +33,17 @@
 
   <div class="field">
     <%= form.label :prep_time %>
-    <%= form.number_field :prep_time, id: :recipe_prep_time %>
+    <%= form.number_field :prep_time, placeholder: "minutes", id: :recipe_prep_time %>
   </div>
 
   <div class="field">
     <%= form.label :directions %>
-    <%= form.text_field :directions, id: :recipe_directions %>
+    <%= form.text_field :directions, placeholder: "ex: 1. Mix dry ingredients in a large bowl, 2. Mix wet ingredients in a large bowl...", id: :recipe_directions %>
   </div>
 
   <div class="field">
     <%= form.label :ingredients %>
-    <%= form.text_field :ingredients, id: :recipe_ingredients %>
+    <%= form.text_field :ingredients, placeholder: "ex: 1 cup flour, 2 tablespoons vanilla, 3 cups milk, 4 cups sugar", id: :recipe_ingredients %>
   </div>
 
 
