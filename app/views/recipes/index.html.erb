@@ -1,13 +1,29 @@
 <p id="notice"><%= notice %></p>
 <div id="recipes">
-<h3>Recipes</h3>
-<%= link_to 'Add New Recipe', new_recipe_path %>
+<h3>Menu</h3>
+<li><%= link_to 'Add New Recipe', new_recipe_path %></li>
+<br />
+
+<div id="search-box">
+  <%= form_tag('/recipes', method: "get") do %>
+    <%= label_tag(:search, "Search by ingredient:") %>
+    <%= text_field_tag(:search) %>
+    <%= submit_tag("Search") %>
+  <%end%>
+</div>
+
+<% if @recipes.blank? %>
+  <p>There are no recipes with <%= params[:search]%>. </p>
+<%else%>
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Submitted By</th>
       <th>Difficulty</th>
       <th>Prep time</th>
+      <th>Rating</th>
 
       <th colspan="3"></th>
     </tr>
@@ -17,12 +33,15 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
+        <td><%= recipe.user.email%></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
+<%end%>
 
 <br>
 </div>

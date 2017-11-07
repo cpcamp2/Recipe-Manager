@@ -23,3 +23,6 @@ end
 50.times do
   Rating.create(score: Faker::Number.between(1, 5), user_id: Faker::Number.between(1, 4), recipe_id: Faker::Number.between(1, 30))
 end
+
+
+

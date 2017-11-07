@@ -1,10 +1,17 @@
-class RecipesController < ApplicationController
+ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes
   # GET /recipes.json
   def index
+    current_user
     @recipes = Recipe.all
+    if params[:search]
+      # binding.pry
+      @recipes = Recipe.search(params[:search])
+    else
+      @recipes = Recipe.all
+    end
   end
 
   # GET /recipes/1
@@ -24,7 +31,7 @@ class RecipesController < ApplicationController
   # POST /recipes
   # POST /recipes.json
   def create
-    binding.pry
+    # binding.pry
     @recipe = current_user.recipes.create(recipe_params)
 
     respond_to do |format|
