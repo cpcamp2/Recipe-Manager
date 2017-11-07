@@ -16,10 +16,20 @@
     <%= form.text_field :name, id: :recipe_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :difficulty %>
-    <%= form.text_field :difficulty, id: :recipe_difficulty %>
-  </div>
+  <p>
+    <div class="field">
+      <%= form.label :difficulty %>
+
+      <%= radio_button_tag("recipe[difficulty]", "easy") %>
+      <%= label_tag(:recipe_difficulty_easy, "Easy")  %>
+
+      <%= radio_button_tag("recipe[difficulty]", "medium", tag_name: 'recipe[difficulty]') %>
+      <%= label_tag(:recipe_difficulty_medium, "Medium") %>
+
+      <%= radio_button_tag("recipe[difficulty]", "hard", tag_name: 'recipe[difficulty]') %>
+      <%= label_tag(:recipe_difficulty_hard, "Hard") %>
+    </div>
+  </p>
 
   <div class="field">
     <%= form.label :prep_time %>
@@ -37,10 +47,23 @@
   </div>
 
 
-  <div class="field">
-    <%= form.label :category %>
-    <%= form.text_field :category, id: :recipe_category %>
-  </div>
+  <p>
+    <div class="field">
+      <%= form.label :category %>
+
+      <%= radio_button_tag("recipe[category]", "appetizer") %>
+      <%= label_tag(:recipe_category_appetizer, "Appetizer")  %>
+
+      <%= radio_button_tag("recipe[category]", "salad") %>
+      <%= label_tag(:recipe_category_salad, "Salad")  %>
+
+      <%= radio_button_tag("recipe[category]", "main_course") %>
+      <%= label_tag(:recipe_category_main_course, "Main Course")  %>
+
+      <%= radio_button_tag("recipe[category]", "dessert") %>
+      <%= label_tag(:recipe_category_dessert, "Dessert")  %>
+    </div>
+  </p>
 
   <div class="actions">
     <%= form.submit %>
