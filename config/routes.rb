@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :recipes
   resources :ratings
-  resources :users
+  resources :users, only: [:show]
+  match 'users/:id' => 'users#show', via: :get
   root 'welcome#index'
 
 end
