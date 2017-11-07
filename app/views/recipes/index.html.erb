@@ -6,7 +6,7 @@
 
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:search, "Search by ingredient:") %>
+    <%= label_tag(:search, "Search:") %>
     <%= text_field_tag(:search) %>
     <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
   <%end%>
