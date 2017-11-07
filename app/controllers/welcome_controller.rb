@@ -1,10 +1,6 @@
 class WelcomeController < ApplicationController
-  include UserHelper
+  # include UserHelper
     def index
-      # binding.pry
-      # current_user = User.find_by(id: session[:user_id])
-      @recipes = current_user.recipes
-
-
+      @recipes = Recipe.limit(5)
     end
   end
