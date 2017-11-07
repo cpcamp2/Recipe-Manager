@@ -4,11 +4,25 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :ratings
 
-  def self.search(search)
+  paginates_per 10
+
+  def self.ingredient_search(ingredient)
     @recipes = Recipe.all
     searched_recipes = []
     @recipes.each do |recipe|
-      if recipe.ingredients.include?(search)
+      if recipe.ingredients.include?(ingredient)
+        searched_recipes << recipe
+      end
+
+    end
+    return searched_recipes
+  end
+
+   def self.name_search(name)
+    @recipes = Recipe.all
+    searched_recipes = []
+    @recipes.each do |recipe|
+      if recipe.name.include?(name)
         searched_recipes << recipe
       end
 
