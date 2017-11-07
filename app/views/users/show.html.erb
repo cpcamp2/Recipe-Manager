@@ -1,5 +1,8 @@
 <h3>My Recipes</h3>
 <ul>
+<button class="btn waves-effect waves-light"><%= link_to 'Add New Recipe', new_recipe_path %></button>
+<br>
+<br>
 <%@user_recipes.each do |recipe|%>
   <li><%=recipe.name%> <%= link_to 'More info', recipe%></li>
 
