@@ -21,10 +21,10 @@
   <%end%>
 </div>
 
-<% if @recipes.blank? %>
-  <p>There are no recipes with <%= params[:search]%>. </p>
-<%elsif @recipes.blank? %>
-<p>There are no recipes with <%= params[:name]%> </p>
+<% if @recipes.blank? && params[:ingredient] %>
+  <p>There are no recipes with <%= params[:ingredient]%>. </p>
+<%elsif @recipes.blank? && params[:name] %>
+<p>There are no recipes named <%= params[:name]%>. </p>
 <%else%>
 
 <table>
