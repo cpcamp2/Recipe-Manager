@@ -1,4 +1,5 @@
-class UsersController < ApplicationController
+# class UsersController < ApplicationController
+
 
     def index
       user = User.find_by(id: current_user.id)
@@ -15,3 +16,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email)
     end
   end
+
