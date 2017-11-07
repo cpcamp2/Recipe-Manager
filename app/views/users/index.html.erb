@@ -1,12 +1,14 @@
-<h3>My Recipes</h3>
-<% if user_signed_in? %>
-<%@user_recipes.each do |recipe| %>
-  <h3><%=recipe.name%></h3>
-  <ol>
-  <li><%=recipe.ingredients%></li>
-  <li><%=recipe.directions%></li>
-  <li><%=recipe.difficulty%></li>
-</ol>
-<%else%>
-test
-<%end%>
+<div>
+  <h3>My Recipes</h3>
+  <% if user_signed_in? %>
+    <%@user_recipes.each do |recipe| %>
+    <h3><%=recipe.name%></h3>
+    <ol>
+      <li><%=recipe.ingredients%></li>
+      <li><%=recipe.directions%></li>
+      <li><%=recipe.difficulty%></li>
+    </ol>
+  <%else%>
+    test
+  <%end%>
+</div>
