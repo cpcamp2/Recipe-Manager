@@ -25,3 +25,7 @@ p, li, #recipes, td {
 .material-icons {
   padding-left: 20px;
 }
+
+#nav-mobile li a{
+  color: white;
+}
