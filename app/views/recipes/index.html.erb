@@ -39,7 +39,7 @@
   </thead>
   <tbody>
 
-<%= paginate @recipes %>
+
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
