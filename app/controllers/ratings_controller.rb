@@ -41,6 +41,9 @@ class RatingsController < ApplicationController
   # PATCH/PUT /ratings/1
   # PATCH/PUT /ratings/1.json
   def update
+    @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new(rating_params)
+    @rating.user = current_user
+
     respond_to do |format|
       if @rating.update(rating_params)
         format.html { redirect_to @rating, notice: 'Rating was successfully updated.' }

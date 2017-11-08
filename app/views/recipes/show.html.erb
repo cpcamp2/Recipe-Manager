@@ -30,6 +30,19 @@
   <%= @recipe.category%>
 </p>
 
-<%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %> |
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<p>
+  <% if user_signed_in? %>
+    <% if @current_user_rating %>
+      <strong>Your Rating:</strong>
+      <%= @current_user_rating.score %>
+    <% end %>
+  <% end %>
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %>
+  <% if @recipe.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+  <% end %>
+<% end %>
 <%= link_to 'Back', recipes_path %>
