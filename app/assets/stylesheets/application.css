@@ -21,14 +21,11 @@ p, li, #recipes, td {
   width: 40%;
   height: 50%;
   border-radius: 30px;
-
-
 }
 
 #image-display  {
   display: inline-block;
   column-count: 2;
-
 }
 
 nav {
