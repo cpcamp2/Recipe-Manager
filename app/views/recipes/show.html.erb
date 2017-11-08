@@ -6,12 +6,17 @@
         <!-- <p id="notice"><%= notice %>
         </p> -->
         <span class="card-title"><%= @recipe.name %></span>
-        <p><strong>Difficulty:</strong> <%= @recipe.difficulty %></p>
-        <p><strong>Prep time:</strong> <%= @recipe.prep_time %> minutes</p>
-        <p><strong>Directions:</strong> <%= @recipe.directions %></p>
-        <p><strong>Ingredients:</strong> <%= @recipe.ingredients%></p>
-        <p><strong>Meal:</strong> <%= @recipe.category%></p>
+        <p><strong>Difficulty:</strong> <br><%= @recipe.difficulty %></p>
+        <br>
+        <p><strong>Prep time:</strong> <br><%= @recipe.prep_time %> minutes</p>
+        <br>
+        <p><strong>Directions:</strong><br> <%= @recipe.directions %></p>
+        <br>
+        <p><strong>Ingredients:</strong><br> <%= @recipe.ingredients%></p>
+        <br>
+        <p><strong>Meal:</strong><br> <%= @recipe.category%></p>
         <p>
+          <br>
           <% if user_signed_in? %>
             <% if @current_user_rating %>
               <strong>Your Rating:</strong>
