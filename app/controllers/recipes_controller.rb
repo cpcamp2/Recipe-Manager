@@ -18,6 +18,8 @@
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @recipe = Recipe.find_by(id: params[:id])
+    @current_user_rating = Rating.find_by(user: current_user, recipe: @recipe)
   end
 
   # GET /recipes/new
@@ -32,7 +34,6 @@
   # POST /recipes
   # POST /recipes.json
   def create
-
     @recipe = current_user.recipes.create(recipe_params)
 
     respond_to do |format|

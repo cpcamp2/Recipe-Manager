@@ -1,5 +1,9 @@
 class WelcomeController < ApplicationController
-    def index
-      @recipes = Recipe.limit(5)
-    end
+  include RecipesHelper
+
+  def index
+    @recipes = Recipe.all
+    @recipes_by_rating = recipes_sort(@recipes).reverse
   end
+end
+

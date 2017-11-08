@@ -8,18 +8,27 @@
       <th>Name</th>
       <th>Difficulty</th>
       <th>Prep time</th>
-
+      <th>Rating</th>
 
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @recipes.each do |recipe| %>
+    <% @recipes_by_rating.each do |recipe| %>
       <tr>
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
+        <% sum = 0 %>
+        <% recipe.ratings.each do |rating| %>
+          <% sum += rating.score %>
+        <% end %>
+        <% if recipe.ratings.empty? %>
+        <td>Unrated</td>
+        <% else %>
+        <td><%= sum / recipe.ratings.length %><td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
