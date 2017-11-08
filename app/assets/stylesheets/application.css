@@ -16,3 +16,16 @@
 p, li, #recipes, td {
     font-size: 18px;
 }
+
+
+#nav-mobile li {
+  padding-top: 20px;
+}
+
+.material-icons {
+  padding-left: 20px;
+}
+
+#nav-mobile li a{
+  color: white;
+}

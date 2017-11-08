@@ -7,7 +7,7 @@
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:ingredient, "Search by ingredient:") %>
     <%= text_field_tag(:ingredient) %>
-    <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
+    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
 <br />
@@ -16,11 +16,11 @@
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:name, "Search by recipe name:") %>
     <%= text_field_tag(:name) %>
-    <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
+    <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
 <br />
-  <%= paginate @recipes %>
+
 <% if @recipes.blank? && params[:ingredient] %>
   <p>There are no recipes with <%= params[:ingredient]%>. </p>
 <%elsif @recipes.blank? && params[:name] %>
@@ -38,6 +38,8 @@
     </tr>
   </thead>
   <tbody>
+
+
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>

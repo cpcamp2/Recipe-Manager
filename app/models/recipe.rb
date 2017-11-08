@@ -1,10 +1,11 @@
 class Recipe < ApplicationRecord
-  validates :name, :difficulty, :prep_time, :directions, :ingredients, :category, :user, presence: true
-
+  validates :name, :difficulty, :directions, :ingredients, :category, :user, presence: true
+  validates :prep_time, presence: true
+  validates_numericality_of :prep_time, on: :create, :greater_than_or_equal_to => 1
+  
   belongs_to :user
   has_many :ratings
 
-  paginates_per 10
 
   def self.ingredient_search(ingredient)
     @recipes = Recipe.all
