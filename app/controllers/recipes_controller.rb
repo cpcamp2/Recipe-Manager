@@ -5,14 +5,13 @@
   # GET /recipes.json
   def index
     current_user
-    @recipes = Recipe.order(:name).page params[:page]
+    @recipes = Recipe.all
     if params[:ingredient]
-
-      @recipes = Recipe.ingredient_search(params[:ingredient]).order(:name).page params[:page]
+      @recipes = @recipes.ingredient_search(params[:ingredient])
     elsif params[:name]
-      @recipes = Recipe.name_search(params[:name]).order(:name).page params[:page]
+      @recipes = Recipe.name_search(params[:name])
     else
-      @recipes = Recipe.all.order(:name).page params[:page]
+      @recipes = Recipe.all
     end
   end
 
