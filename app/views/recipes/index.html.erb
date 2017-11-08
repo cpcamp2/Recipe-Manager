@@ -21,7 +21,7 @@
   <%end%>
 </div>
 <br />
-  <%= paginate @recipes %>
+
 <% if @recipes.blank? && params[:ingredient] %>
   <p>There are no recipes with <%= params[:ingredient]%>. </p>
 <%elsif @recipes.blank? && params[:name] %>
@@ -42,7 +42,7 @@
   </thead>
 
   <tbody>
-
+<%= paginate @recipes %>
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
