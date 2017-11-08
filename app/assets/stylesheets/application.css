@@ -31,3 +31,27 @@ p, li, #recipes, td {
 
 }
 
+nav {
+  background-color
+}
+
+.material-icons {
+  padding-left: 15px;
+}
+
+#nav-mobile li a {
+  color: white;
+}
+
+#nav-mobile li {
+  padding-top: 20px;
+}
+/*
+#recipes {
+  background-image: url("https://www.xmple.com/wallpaper/checkered-black-white-squares-3840x2160-c2-000000-f8f8ff-l-140-a-0-f-2.svg");
+  background-repeat: no-repeat;
+
+
+
+}*/
+

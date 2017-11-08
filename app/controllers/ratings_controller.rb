@@ -14,6 +14,7 @@ class RatingsController < ApplicationController
 
   # GET /ratings/new
   def new
+    @recipe = Recipe.find_by(id: params[:recipe_id])
     @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new
   end
 
@@ -24,6 +25,7 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
+    @recipe = Recipe.find_by(id: params[:recipe_id])
     @rating = Recipe.find_by(id: params[:recipe_id]).ratings.new(rating_params)
     @rating.user = current_user
 
