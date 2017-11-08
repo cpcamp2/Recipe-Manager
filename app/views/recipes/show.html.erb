@@ -1,35 +1,22 @@
-<p id="notice"><%= notice %>
-</p>
-
-<h3>
-  <%= @recipe.name %>
-</h3>
-
-<p>
-  <strong>Difficulty:</strong>
-  <%= @recipe.difficulty %>
-</p>
-
-<p>
-  <strong>Prep time:</strong>
-  <%= @recipe.prep_time %> minutes
-</p>
-
-<p>
-  <strong>Directions:</strong>
-  <%= @recipe.directions %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= @recipe.ingredients%>
-</p>
-
-<p>
-  <strong>Meal:</strong>
-  <%= @recipe.category%>
-</p>
-
-<%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %> |
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey lighten-2">
+      <div class="card-content white-text">
+      <!-- Not sure what the below does or why it is here -->
+      <!-- <p id="notice"><%= notice %>
+      </p> -->
+      <span class="card-title"><%= @recipe.name %></span>
+      <p><strong>Difficulty:</strong> <%= @recipe.difficulty %></p>
+      <p><strong>Prep time:</strong> <%= @recipe.prep_time %> minutes</p>
+      <p><strong>Directions:</strong> <%= @recipe.directions %></p>
+      <p><strong>Ingredients:</strong> <%= @recipe.ingredients%></p>
+      <p><strong>Meal:</strong> <%= @recipe.category%></p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Rate this recipe', new_recipe_rating_path(@recipe) %>
+        <%= link_to 'Edit', edit_recipe_path(@recipe) %>
+        <%= link_to 'Back', recipes_path %>
+      </div>
+    </div>
+  </div>
+</div>
