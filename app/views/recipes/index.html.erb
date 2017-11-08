@@ -12,19 +12,12 @@
 </div>
 <br />
 
-<div id="search-box-name">
-  <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:name, "Search by recipe name:") %>
-    <%= text_field_tag(:name) %>
-    <button class="btn waves-effect waves-light"><%= submit_tag("Search") %></button>
-  <%end%>
-</div>
+
 <br />
 <%= paginate @recipes %>
 <% if @recipes.blank? && params[:ingredient] %>
   <p>There are no recipes with <%= params[:ingredient]%>. </p>
-<%elsif @recipes.blank? && params[:name] %>
-<p>There are no recipes named <%= params[:name]%>. </p>
+
 <%else%>
 <table>
   <thead>

@@ -7,27 +7,11 @@ class Recipe < ApplicationRecord
   paginates_per 10
 
   def self.ingredient_search(ingredient)
-    @recipes = Recipe.all
-    searched_recipes = []
-    @recipes.each do |recipe|
-      if recipe.ingredients.include?(ingredient)
-        searched_recipes << recipe
-      end
-
-    end
-    return searched_recipes
+    return Recipe.where("ingredients ILIKE ?", "%#{ingredient}%")
   end
 
-   def self.name_search(name)
-    @recipes = Recipe.all
-    searched_recipes = []
-    @recipes.each do |recipe|
-      if recipe.name.include?(name)
-        searched_recipes << recipe
-      end
-
-    end
-    return searched_recipes
-  end
+  #  def self.name_search(name)
+  #  return Recipe.where("ingredients ILIKE ?", "%#{name}%")
+  # end
 
 end

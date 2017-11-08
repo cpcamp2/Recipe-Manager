@@ -7,12 +7,12 @@
     current_user
     @recipes = Recipe.order(:name).page params[:page]
     if params[:ingredient]
-      binding.pry
+      # binding.pry
       @recipes = Recipe.ingredient_search(params[:ingredient]).order(:name).page params[:page]
-    elsif params[:name]
-      @recipes = Recipe.name_search(params[:name]).order(:name).page params[:page]
+    # elsif params[:name]
+    #   @recipes = Recipe.name_search(params[:name]).order(:name).page params[:page]
     else
-      @recipes = Recipe.all.order(:name).page params[:page]
+      @recipes = Recipe.order(:name).page params[:page]
     end
   end
 
