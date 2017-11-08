@@ -3,7 +3,6 @@
 <h3>Menu</h3>
 <!-- <h6><%= link_to 'Add New Recipe', new_recipe_path %><h6> -->
 <br />
-
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
     <%= label_tag(:ingredient, "Search by ingredient:") %>
@@ -27,7 +26,6 @@
 <%elsif @recipes.blank? && params[:name] %>
 <p>There are no recipes named <%= params[:name]%>. </p>
 <%else%>
-
 <table>
   <thead>
     <tr>
@@ -36,12 +34,11 @@
       <th>Difficulty</th>
       <th>Prep time</th>
       <th>Average Rating</th>
-
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
+
 <%= paginate @recipes %>
     <% @recipes.each do |recipe| %>
       <tr>
@@ -49,7 +46,6 @@
         <td><%= recipe.user.email%></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
-
         <% sum = 0 %>
         <% recipe.ratings.each do |rating| %>
           <% sum += rating.score %>
@@ -64,6 +60,5 @@
   </tbody>
 </table>
 <%end%>
-
 <br>
 </div>
