@@ -30,3 +30,15 @@ p, li, #recipes, td {
   color: white;
 }
 
+#spaghetti {
+  display: block;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.card-body .btn {
+  color: red;
+}
