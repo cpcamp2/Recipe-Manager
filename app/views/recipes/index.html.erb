@@ -1,12 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div id="recipes">
 <h3>Menu</h3>
-<!-- <h6><%= link_to 'Add New Recipe', new_recipe_path %><h6> -->
+<h6><%= link_to 'Add New Recipe', new_recipe_path %><h6>
 <br />
 <div id="search-box">
   <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:ingredient, "Search by ingredient:") %>
-    <%= text_field_tag(:ingredient) %>
+    <%= text_field_tag 'ingredient', nil, placeholder: 'Search by ingredient' %>
     <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
@@ -14,17 +13,16 @@
 
 <div id="search-box-name">
   <%= form_tag('/recipes', method: "get") do %>
-    <%= label_tag(:name, "Search by recipe name:") %>
-    <%= text_field_tag(:name) %>
+    <%= text_field_tag('name', nil, placeholder: 'Search by recipe name') %>
     <button class="btn waves-effect teal darken-4"><%= submit_tag("Search") %></button>
   <%end%>
 </div>
 <br />
 
 <% if @recipes.blank? && params[:ingredient] %>
-  <p>There are no recipes with <%= params[:ingredient]%>. </p>
+  <p>There are no recipes with <%= params[:ingredient]%>.</p>
 <%elsif @recipes.blank? && params[:name] %>
-<p>There are no recipes named <%= params[:name]%>. </p>
+  <p>There are no recipes named <%= params[:name]%>. </p>
 <%else%>
 <table>
   <thead>
@@ -34,15 +32,13 @@
       <th>Difficulty</th>
       <th>Prep time</th>
       <th>Average Rating</th>
-      <th colspan="3"></th>
+      <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
   <tbody>
-
-
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.name %> <%= link_to 'More info', recipe%></td>
+        <td><%= link_to recipe.name, recipe %></td>
         <td><%= recipe.user.email%></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.prep_time %> minutes</td>
@@ -50,11 +46,11 @@
         <% recipe.ratings.each do |rating| %>
           <% sum += rating.score %>
         <% end %>
-        <% if recipe.ratings.empty? %>
-        <td>Unrated</td>
-        <% else %>
-        <td><%= sum / recipe.ratings.length %><td>
-        <% end %>
+          <% if recipe.ratings.empty? %>
+            <td>Unrated</td>
+          <% else %>
+            <td><%= sum / recipe.ratings.length %><td>
+          <% end %>
       </tr>
     <% end %>
   </tbody>
