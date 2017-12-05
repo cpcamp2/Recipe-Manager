@@ -5,21 +5,21 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script src="jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-
     </style>
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper red darken-4">
+      <div class="nav-wrapper blue darken-4">
         <a href="/" class="brand-logo"><i class="material-icons">home</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
             <li><%= link_to "New Recipe", new_recipe_path , :class => 'navbar-link'%></li>
-            <li><%= link_to "All Recipes", recipes_path , :class => 'navbar-link'%></li>
+            <li><%= link_to "Menu", recipes_path , :class => 'navbar-link'%></li>
             <li><%= link_to "My Recipes", user_path(current_user.id), :class => 'navbar-link' %></li>
             <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
@@ -34,20 +34,19 @@
       <%= yield %>
     </div>
   </body>
-  <footer class="page-footer red darken-4">
+  <footer class="page-footer blue darken-4">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Dev Bootcamp</h5>
-                <p class="grey-text text-lighten-4">NYC Red Pandas 2017</p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text"><i class="material-icons">build</i>  w/ <i class="material-icons">favorite</i> by:</h5>
+                <h5 class="white-text">Creators:</h5>
                 <ul>
-                  <li><i class="material-icons">face</i><a class="grey-text text-lighten-3" href="https://github.com/amber2394">Amber Maillard</a></li>
-                  <li><i class="material-icons">cake</i> <a class="grey-text text-lighten-3" href="https://github.com/clr2107">Catherine Rice</a></li>
-                  <li><i class="material-icons">smoking_rooms</i> <a class="grey-text text-lighten-3" href="https://github.com/cpcamp2">Chris "Penn" Camp</a></li>
-                  <li><i class="material-icons">free_breakfast</i> <a class="grey-text text-lighten-3" href="https://github.com/davidtskaggs">David Skaggs</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/amber2394">Amber Maillard</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/clr2107">Catherine Rice</a></li>
+                  <li> <a class="grey-text text-lighten-3" href="https://github.com/cpcamp2">Chris "Penn" Camp</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/davidtskaggs">David Skaggs</a></li>
                 </ul>
               </div>
             </div>
@@ -58,5 +57,5 @@
             <a class="grey-text text-lighten-4 right" href="https://github.com/cpcamp2/Recipe-Manager">Source Code</a>
             </div>
           </div>
-        </footer>
+  </footer>
 </html>
